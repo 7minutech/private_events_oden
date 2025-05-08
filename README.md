@@ -1,24 +1,19 @@
-# README
+Private Events
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple event management app built with Ruby on Rails. It’s based on The Odin Project’s Private Events project.
+📝 What It Does
 
-Things you may want to cover:
+    Users can sign up and log in
 
-* Ruby version
+    Users can create events
 
-* System dependencies
+    Users can attend events created by others
 
-* Configuration
+    Events have a name, date, and location
 
-* Database creation
+    Users can see past and upcoming events
 
-* Database initialization
+🔗 Project Link
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can find the original assignment here:
+https://www.theodinproject.com/lessons/ruby-on-rails-private-events
