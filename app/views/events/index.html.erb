@@ -4,11 +4,13 @@
   <% @events.each do |event|%>
     <ul>
       <li>
-        <h2>Name: <%= event.name %></h2>
+        <h2>Event Name: <%= event.name %></h2>
         <p>Date: <%= event.date || "TBD" %></p>
         <p>Location: <%= event.location %></p>
-        <h3>Description</h3>
-        <p><%= event.description %></p>
+        <% if event.description %>
+          <h3>Description</h3>
+          <p><%= event.description %></p>
+        <% end %>
       </li>
     </ul>
   <% end %>
