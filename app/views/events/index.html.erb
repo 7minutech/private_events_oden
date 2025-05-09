@@ -1,13 +1,14 @@
 <h1>Events</h1>
 <% if @events.any? %>
   <% @events.each do |event|%>
-  <ul>
-    <li>
-      <h2>Name: <%= event.name %></h2>
-      <p>Date: <%= event.date || "TBD" %></p>
-      <p>Location: <%= event.location %></p>
-      <h3>Description</h3>
-      <p><%= event.description %></p>
-    </li>
-  </ul>
+    <ul>
+      <li>
+        <h2>Name: <%= event.name %></h2>
+        <p>Date: <%= event.date || "TBD" %></p>
+        <p>Location: <%= event.location %></p>
+        <h3>Description</h3>
+        <p><%= event.description %></p>
+      </li>
+    </ul>
+  <% end %>
 <% end %>
