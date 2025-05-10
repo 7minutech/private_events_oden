@@ -40,6 +40,14 @@ class EventsController < ApplicationController
     end
   end
 
+  def destroy
+    @user = current_user
+    @event = Event.find(params[:id])
+    @event.destroy
+
+    redirect_to user_path(@user), status: :see_other
+  end
+
   private
   def event_params
     params.require(:event).permit(:name, :description, :date, :location)
