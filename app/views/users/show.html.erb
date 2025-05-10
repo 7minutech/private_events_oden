@@ -17,12 +17,16 @@
 <h2>Past Events</h2>
 <ul>
   <% Event.past.each do |event|%>
-    <li><%= link_to event.name, event_path(event) %></li>
+    <% if @user.attended_events.include?(event) %>
+      <li><%= link_to event.name, event_path(event) %></li>
+    <% end%>
   <% end %>
 </ul>
 <h2>Upcoming Events</h2>
 <ul>
   <% Event.upcoming.each do |event|%>
-    <li><%= link_to event.name, event_path(event) %></li>
+    <% if @user.attended_events.include?(event) %>
+      <li><%= link_to event.name, event_path(event) %></li>
+    <% end %>
   <% end %>
 </ul>
