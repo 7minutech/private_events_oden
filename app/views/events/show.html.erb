@@ -11,6 +11,8 @@
                     } %>
 <% end %>
 <br><br>
+<%= link_to 'Attend Event', new_booking_path(attended_event_id: @event.id, attendee_id: @user.id) %>
+<br><br>
 <h1><%= @event.name %></h1>
 <p><%= @event.description %></p>
 <h3>Date: <%= @event.date %></h3>
