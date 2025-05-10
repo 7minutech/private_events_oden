@@ -21,6 +21,15 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    if @booking.destroy
+      redirect_to user_path(current_user), notice: "You have successfully withdrawn from the event."
+    else
+      redirect_to user_path(current_user), alert: "Something went wrong."
+    end
+  end
+
   private
 
   def already_attending?
