@@ -1,4 +1,6 @@
 <h1>Bookings</h1>
+<%= link_to 'My Events', user_path(@user)   %>
+<br><br>
 <%= form_with model: @booking do |form| %>
   <h3>Created By: <%= @event.creator.name %></h2>
   <br>
