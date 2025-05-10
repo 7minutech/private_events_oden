@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   def new
+    @user = current_user
     @event = Event.find(params[:attended_event_id])
     @booking = Booking.new
   end
