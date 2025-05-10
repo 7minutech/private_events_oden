@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :require_login
+
   def index
     @events = Event.all
   end
@@ -24,5 +26,9 @@ class EventsController < ApplicationController
   private
   def event_params
     params.require(:event).permit(:name, :description, :date, :location)
+  end
+
+  def require_login
+    redirect_to new_user_session_path if !user_signed_in?
   end
 end
