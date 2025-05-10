@@ -16,8 +16,16 @@
 
 <br>
 <h1>Attending Events</h1>
-<% @user.attended_events.each do |event|%>
-  <ul>
+
+<h2>Past Events</h2>
+<ul>
+  <% Event.where("date < ?", Date.today).each do |event|%>
     <li><%= link_to event.name, event_path(event) %></li>
-  </ul>
-<% end %>
+  <% end %>
+</ul>
+<h2>Upcoming Events</h2>
+<ul>
+  <% Event.where("date > ?", Date.today).or(Event.where(date: nil)).each do |event|%>
+    <li><%= link_to event.name, event_path(event) %></li>
+  <% end %>
+</ul>
