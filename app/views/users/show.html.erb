@@ -17,11 +17,7 @@
 <br>
 <h1>Attending Events</h1>
 <% @user.attended_events.each do |event|%>
-  <div>
-    <h3>Creator: <%= event.creator.name %></h3>
-    <h3><%= event.name %></h3>
-    <p><%= event.description %></p>
-    <h3>Event Date: <%= event.date %></h3>
-    <h3>Event Location: <%= event.location %></h3>
-  </div>
+  <ul>
+    <li><%= link_to event.name, event_path(event) %></li>
+  </ul>
 <% end %>
