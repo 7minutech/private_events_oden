@@ -1,0 +1,22 @@
+<h1>Edit an Event</h1>
+<%= link_to 'My Events', user_path(@user)   %>
+<br><br>
+<%= form_with model: @event do |form| %>
+  <%= form.label "Event name" %>
+  <%= form.text_field :name %>
+  <br>
+  <br>
+  <%= form.label "Event Description" %>
+  <%= form.text_area :description %>
+  <br>
+  <br>
+  <%= form.label "Event Date" %>
+  <%= form.date_field :date %>
+  <br>
+  <br>
+  <%= form.label "Event Location" %>
+  <%= form.text_field :location %>
+  <br>
+  <br>
+  <%= form.submit %>
+<% end %>
