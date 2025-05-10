@@ -1,0 +1,19 @@
+<h1>Bookings</h1>
+<%= form_with model: @booking do |form| %>
+  <h3>Created By: <%= @event.creator.name %></h2>
+  <br>
+  <%= form.label "Event name: #{@event.name }" %>
+  <br>
+  <br>
+  <%= form.label "Event Description: #{@event.description }" %>
+  <br>
+  <br>
+  <%= form.label "Event Date: #{@event.date }" %>
+  <br>
+  <br>
+  <%= form.label "Event Location: #{@event.location }" %>
+  <br>
+  <br>
+  <%= form.submit %>
+<% end %>
+
