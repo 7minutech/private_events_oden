@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @events = @user.created_events
+    redirect_to user_path(@user), alert: "Access denied" if @user.id != params[:id].to_i
   end
 
   private
