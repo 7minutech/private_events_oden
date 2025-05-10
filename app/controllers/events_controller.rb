@@ -2,10 +2,12 @@ class EventsController < ApplicationController
   before_action :require_login
 
   def index
+    @user = current_user
     @events = Event.all
   end
 
   def new
+    @user = current_user
     @event = Event.new
   end
 

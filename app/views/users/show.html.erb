@@ -1,4 +1,10 @@
 <h1>Created Events</h1>
+<%= link_to 'All Events', events_path   %>
+<br><br>
+<%= link_to 'Create Event', new_event_path %>
+<br><br>
+<%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+<br>
 <% @events.each do |event|%>
   <div>
     <h3><%= event.name %></h3>

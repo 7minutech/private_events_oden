@@ -1,4 +1,6 @@
 <h1>Create an Event</h1>
+<%= link_to 'My Events', user_path(@user)   %>
+<br><br>
 <%= form_with model: @event do |form| %>
   <%= form.label "Event name" %>
   <%= form.text_field :name %>
