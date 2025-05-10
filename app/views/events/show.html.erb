@@ -4,6 +4,11 @@
 <br><br>
 <%= link_to 'Edit event', edit_event_path(@event) %>
 <br><br>
+<%= link_to "Delete Event", event_path(@event), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+<br><br>
 <h1><%= @event.name %></h1>
 <p><%= @event.description %></p>
 <h3>Date: <%= @event.date %></h3>
