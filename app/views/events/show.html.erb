@@ -1,3 +1,7 @@
+<%= link_to 'All Events', events_path   %>
+<br><br>
+'<%= link_to 'My Events', user_path(@user)   %>
+<br><br>
 <h1><%= @event.name %></h1>
 <p><%= @event.description %></p>
 <h3>Date: <%= @event.date %></h3>
