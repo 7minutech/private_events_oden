@@ -11,6 +11,11 @@
                     } %>
 <% end %>
 <br><br>
+<% booking = @user.bookings.find_by(attended_event_id: @event.id) %>
+<% if booking %>
+  <%= link_to "Withdraw from Event", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+<% end %>
+<br><br>
 <%= link_to 'Attend Event', new_booking_path(attended_event_id: @event.id, attendee_id: @user.id) %>
 <br><br>
 <h1><%= @event.name %></h1>
