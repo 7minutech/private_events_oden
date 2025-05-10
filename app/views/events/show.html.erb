@@ -2,12 +2,14 @@
 <br><br>
 <%= link_to 'My Events', user_path(@user)   %>
 <br><br>
-<%= link_to 'Edit event', edit_event_path(@event) %>
-<br><br>
-<%= link_to "Delete Event", event_path(@event), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %>
+<% if @event.creator.id == @user.id %>
+  <%= link_to 'Edit event', edit_event_path(@event) %>
+  <br><br>
+  <%= link_to "Delete Event", event_path(@event), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    } %>
+<% end %>
 <br><br>
 <h1><%= @event.name %></h1>
 <p><%= @event.description %></p>
