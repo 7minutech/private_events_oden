@@ -6,3 +6,10 @@
 <p><%= @event.description %></p>
 <h3>Date: <%= @event.date %></h3>
 <h3>Location: <%= @event.location %></h3>
+
+<h2>Attending</h2>
+<% @event.attendees.each do |user| %>
+  <ul>
+    <li><%= user.name %></li>
+  </ul>
+<% end %>
