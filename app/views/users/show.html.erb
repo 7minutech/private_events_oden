@@ -19,13 +19,13 @@
 
 <h2>Past Events</h2>
 <ul>
-  <% Event.where("date < ?", Date.today).each do |event|%>
+  <% Event.past.each do |event|%>
     <li><%= link_to event.name, event_path(event) %></li>
   <% end %>
 </ul>
 <h2>Upcoming Events</h2>
 <ul>
-  <% Event.where("date > ?", Date.today).or(Event.where(date: nil)).each do |event|%>
+  <% Event.upcoming.each do |event|%>
     <li><%= link_to event.name, event_path(event) %></li>
   <% end %>
 </ul>
